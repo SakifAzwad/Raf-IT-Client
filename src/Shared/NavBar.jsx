@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthCon } from "../Provider/AuthProv";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthCon);
+
+  const hanlogout = () => {
+    logOut().then().catch();
+  };
+
   return (
     <div>
       <div className="navbar flex justify-between bg-col2 px-24">
@@ -23,26 +31,51 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-           
         </div>
         <div className=" mr-2">
-            <Link to="/signup"><button className="btn btn-primary mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">SIGN UP</button></Link>
-            <Link to="/login"><button className="btn btn-primary hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg px-5">LOGIN</button></Link>
-          
-
-          {/* <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
-        <div className="w-full rounded-full">
-          <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          {user ? (
+            <>
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar "
+                >
+                  <div className="w-full rounded-full">
+                    <img
+                      alt=""
+                      src={user.photoURL}
+                    />
+                  </div>
+                </div>
+                <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <h1 className="p-3 text-center text-xl">{user.displayName}</h1>
+                  <li>
+                    <button
+                      onClick={hanlogout}
+                      className="btn pt-2.5 btn-primary  hover:border-2 hover:border-col1 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg"
+                    >
+                      LOG OUT
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <>
+              <Link to="/signup">
+                <button className="btn btn-primary mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">
+                  SIGN UP
+                </button>
+              </Link>
+              <Link to="/login">
+                <button className="btn btn-primary hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg px-5">
+                  LOGIN
+                </button>
+              </Link>
+            </>
+          )}
         </div>
-      </div>
-      <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <h1 className="p-3 text-center text-xl">Sakif Azwad</h1>
-        <li><button className="btn btn-primary p-3" >Log Out</button></li>
-      </ul>
-    </div> */}
-        </div>
-       
       </div>
     </div>
   );
