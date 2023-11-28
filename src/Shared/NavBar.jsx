@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
   return (
     <div>
@@ -24,8 +26,9 @@ const NavBar = () => {
            
         </div>
         <div className=" mr-2">
-          <button className="btn btn-primary mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">SIGN UP</button>
-          <button className="btn btn-primary hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">LOG IN</button>
+            <Link to="/signup"><button className="btn btn-primary mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">SIGN UP</button></Link>
+            <Link to="/login"><button className="btn btn-primary hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg px-5">LOGIN</button></Link>
+          
 
           {/* <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
