@@ -7,18 +7,20 @@ import { AuthCon } from "../../Provider/AuthProv";
 import { updateProfile } from "firebase/auth";
 import swal from "sweetalert";
 import axios from "axios";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const people = [{ name: "HR" }, { name: "Employee" }];
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 
 const SignUp = () => {
+  const axiosPublic = useAxiosPublic();
   const { createUser } = useContext(AuthCon);
   const navigate = useNavigate();
   const location1 = useLocation();
   const [registerError, setRegisterError] = useState("");
 
-  const hanreg = async(e) => {
+  const hanreg = async (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
@@ -45,23 +47,22 @@ const SignUp = () => {
       return;
     }
 
-    
     try {
       if (!image) {
-        setRegisterError('Please select an image first.');
+        setRegisterError("Please select an image first.");
         return;
       }
 
-      
-      form.append('image', image);
+      form.append("image", image);
 
-      
-      const response = await axios.post(`https://api.imgbb.com/1/upload?key=${image_hosting_key}`,form);
+      const response = await axios.post(
+        `https://api.imgbb.com/1/upload?key=${image_hosting_key}`,
+        form
+      );
 
-      
-      URL=response.data.data.url;
+      URL = response.data.data.url;
     } catch (error) {
-      console.error('Error uploading image:', error);
+      console.error("Error uploading image:", error);
     }
 
     createUser(email, password)
@@ -72,12 +73,23 @@ const SignUp = () => {
         })
           .then(() => {
             const p = result.user.displayName;
-
-            swal(
-              `Welcome ${p}!`,
-              `You've successfully registered to Raf IT.`,
-              "success"
-            );
+            const userInfo = {
+              name: name,
+              email: email,
+              account: account,
+              salary: salary,
+              role: des,
+              image:URL
+            };
+            axiosPublic.post("/users", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                swal(
+                  `Welcome ${p}!`,
+                  `You've successfully registered to Raf IT.`,
+                  "success"
+                );
+              }
+            });
           })
           .catch((error) => {
             setRegisterError(error.message);
@@ -255,7 +267,7 @@ const SignUp = () => {
                   </span>
                 </label>
                 <input
-                name="image"
+                  name="image"
                   type="file"
                   className=" file-input-info file-input file-input-bordered w-full  flex justify-center"
                 />

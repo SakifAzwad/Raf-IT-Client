@@ -19,15 +19,17 @@ const NavBar = () => {
             alt=""
           />
           <div className="flex-none">
-            <ul className="menu menu-horizontal px-1 text-xl">
+            <ul className="menu menu-horizontal pl-8 text-xl gap-x-4">
+              <Link to="/">
               <li>
-                <a>Home</a>
+                Home
+              </li>
+              </Link>
+              <li>
+                Services
               </li>
               <li>
-                <a>Services</a>
-              </li>
-              <li>
-                <a>Contact Us</a>
+               Contact Us
               </li>
             </ul>
           </div>
@@ -35,6 +37,7 @@ const NavBar = () => {
         <div className=" mr-2">
           {user ? (
             <>
+            <Link to="/dashboard"><button className="btn btn-primary mr-8">Dashboard</button></Link>
               <div className="dropdown dropdown-end">
                 <div
                   tabIndex={0}
