@@ -80,7 +80,8 @@ const SignUp = () => {
               salary: salary,
               role: des,
               image:URL,
-              isFire:false
+              isFire:false,
+              isVerified:false
             };
             axiosPublic.post("/users", userInfo).then((res) => {
               if (res.data.insertedId) {

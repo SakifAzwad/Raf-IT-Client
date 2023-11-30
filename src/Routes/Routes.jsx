@@ -6,6 +6,9 @@ import Home from "../components/Home/Home";
 import Dashboard from "../Layout/Dashboard";
 import PrivateRoute from "../Private/PrivateRoute";
 import AllUsers from "../AdminData/AllUsers";
+import AdminRoute from "./AdminRoute";
+import EmployeeList from "../HRData/EmployeeList";
+import HRRoute from "./HRRoute";
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +37,11 @@ export const router = createBrowserRouter([
       children: [
         {
           path: "allusers",
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+        },
+        {
+          path: "employeelist",
+          element:<HRRoute><EmployeeList></EmployeeList></HRRoute>
         },
       ],
   }

@@ -37,7 +37,7 @@ const NavBar = () => {
         <div className=" mr-2">
           {user ? (
             <>
-            <Link to="/dashboard/allusers"><button className="btn btn-primary mr-8">Dashboard</button></Link>
+            <Link to="/dashboard"><button className="btn mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg px-5">Dashboard</button></Link>
               <div className="dropdown dropdown-end">
                 <div
                   tabIndex={0}
@@ -67,12 +67,12 @@ const NavBar = () => {
           ) : (
             <>
               <Link to="/signup">
-                <button className="btn btn-primary mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">
+                <button className="btn mr-2 hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg">
                   SIGN UP
                 </button>
               </Link>
               <Link to="/login">
-                <button className="btn btn-primary hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg px-5">
+                <button className="btn hover:bg-white hover:text-col1 bg-col1 border-0 text-white text-lg px-5">
                   LOGIN
                 </button>
               </Link>

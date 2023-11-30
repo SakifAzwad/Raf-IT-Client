@@ -15,12 +15,18 @@ import {
 import useAdmin from "../hooks/useAdmin";
 import NavBar from "../Shared/NavBar";
 import Footer from "../Shared/Footer";
+import useHR from "../hooks/useHR";
 
 
   
   const Dashboard = () => {
     
     const [isAdmin] = useAdmin();
+    const [isHR]=useHR();
+    let title="";
+    {
+        (isAdmin ? title="Admin" : ( isHR ? title="HR" : title="Employee") )
+    }
     return (
         <div className="font-Montserrat">
         <NavBar></NavBar>
@@ -39,39 +45,28 @@ import Footer from "../Shared/Footer";
                   
                 </>
               ) : (
-                <>
+
+                isHR ? <>
+                
+                <li>
+                    <NavLink to="/dashboard/employeelist">
+                      <FaUtensils></FaUtensils>
+                      Employee List
+                    </NavLink>
+                  </li>
+                
+                
+                </> : <>
                   <li>
                     <NavLink to="/dashboard/userHome">
                       <FaHome></FaHome>
                       User Home
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink to="/dashboard/history">
-                      <FaCalendar></FaCalendar>
-                      Not History
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/cart">
-                      <FaShoppingCart></FaShoppingCart>
-                      My Cart 
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/review">
-                      <FaAd></FaAd>
-                      Add a Review
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/paymentHistory">
-                      <FaList></FaList>
-                      Real Payment History
-                    </NavLink>
-                  </li>
                 </>
-              )}
+              )
+
+                }
               <div className="divider"></div>
               <li>
                 <NavLink to="/">
@@ -95,7 +90,7 @@ import Footer from "../Shared/Footer";
           </div>
         </div>
         <div className="flex-1 p-8">
-            <h1>Welcome to Admin Panel</h1>
+            <h1>Welcome to {title} Panel</h1>
         <Outlet></Outlet>
       </div>
         
