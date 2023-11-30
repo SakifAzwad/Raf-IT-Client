@@ -59,7 +59,7 @@ const WorkSheet = () => {
     return (
         <div>
            <form onSubmit={workadd} className="card-body">
-        <div className="flex justify-center items-center gap-x-12">
+        <div className="lg:flex justify-center items-center gap-x-12">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Tasks</span>

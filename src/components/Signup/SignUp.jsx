@@ -114,7 +114,7 @@ const SignUp = () => {
 
   const [selected, setSelected] = useState(people[0]);
   return (
-    <div className="flex w-full">
+    <div className="lg:flex w-full">
       <div
         className="hero  min-h-screen"
         style={{
@@ -133,7 +133,7 @@ const SignUp = () => {
       </div>
 
       <div className="hero min-h-screen bg-col2 border-y-2 0">
-        <div className="hero-content flex-col w-full">
+        <div className="hero-content flex-col lg:w-full">
           <div className="text-center">
             <h1 className="text-4xl font-bold">Sign Up Now!</h1>
             <p className="py-2 text-lg">Dive into Tech Excellence</p>

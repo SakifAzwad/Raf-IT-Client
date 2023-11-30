@@ -30,9 +30,9 @@ import useHR from "../hooks/useHR";
     return (
         <div className="font-Montserrat">
         <NavBar></NavBar>
-        <div className="flex">
+        <div className="lg:flex">
         <div>
-          <div className="w-64 min-h-screen bg-col2">
+          <div className="lg:w-64  lg:min-h-screen bg-col2">
             <ul className="menu p-4">
               {isAdmin ? (
                 <>

@@ -11,8 +11,8 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="navbar flex justify-between bg-col2 px-24">
-        <div className="flex justify-around">
+      <div className="navbar lg:flex  lg:justify-between bg-col2 lg:px-24">
+        <div className="flex flex-col lg:justify-around">
           <img
             className="w-60 "
             src="https://i.ibb.co/F8GGD87/cover-removebg-preview.png"

@@ -39,7 +39,7 @@ const Login = () => {
           });
     }
     return (
-        <div className="flex w-full">
+        <div className="lg:flex w-full">
           
     
           <div className="hero min-h-screen bg-col2 border-y-2 0">
