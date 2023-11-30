@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "name": "Sakif Azwad",
+      "img":"https://i.ibb.co/KKXydHK/photo-2023-08-28-16-47-34.jpg",
+      "position": "Founder & Lead Software Developer",
+      "description": "With over 10 years of experience in event planning, Sarah is the creative visionary behind Raf Events. She brings a keen eye for detail and a passion for making dreams come true."
+    },
+    {
+      "id": 2,
+      "name": "Saniad Faruque",
+      "img":"https://i.ibb.co/LtgJmB1/PXL-20230527-161623607.jpg",
+      "position": "Systems Analyst",
+      "description": "Michael is our go-to guy for transforming event spaces into works of art. He has an innate talent for crafting beautiful and unique decor that leaves a lasting impression."
+    },
+    {
+      "id": 3,
+      "name": "Sakib Uddin",
+      "img":"https://i.ibb.co/TrbhVvC/20230628-052748.jpg",
+      "position": "IT Project Manager",
+      "description": "Emily ensures that our clients' needs are met every step of the way. She's a dedicated professional who makes sure your vision becomes a reality."
+    },
+    {
+      "id": 4,
+      "name": "Muntasir Mahmud",
+      "img":"https://i.ibb.co/SBCQ2d6/PXL-20230812-180425356.jpg",
+      "position": "Machine Learning Engineer",
+      "description": "David keeps the logistics of every event running smoothly. His meticulous planning and attention to detail ensure that everything goes off without a hitch."
+    }
+  ]
+  

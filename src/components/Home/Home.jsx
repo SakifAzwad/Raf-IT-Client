@@ -3,8 +3,12 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import Member from './Member';
+import useMemberData from '../../hooks/useMemberdata';
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 const Home = () => {
+
+    const [members]=useMemberData();
     const slider = (
         <AutoplaySlider
           className="h-full pt-1"
@@ -75,9 +79,17 @@ const Home = () => {
         </AutoplaySlider>
     );
     return (
+        <>
         <div>
             {slider}
         </div>
+        <div className="bg-col2">
+        <h1 className="text-center text-5xl font-bold text-col1 pt-12">Meet Our Team</h1>
+    </div>
+    <div>
+        <Member members={members}></Member>
+    </div>
+    </>
     );
 };
 
