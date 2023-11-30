@@ -79,7 +79,8 @@ const SignUp = () => {
               account: account,
               salary: salary,
               role: des,
-              image:URL
+              image:URL,
+              isFire:false
             };
             axiosPublic.post("/users", userInfo).then((res) => {
               if (res.data.insertedId) {

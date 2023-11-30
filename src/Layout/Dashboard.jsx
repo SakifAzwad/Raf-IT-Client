@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
     FaAd,
     FaBook,
@@ -30,35 +31,12 @@ import Footer from "../Shared/Footer";
               {isAdmin ? (
                 <>
                   <li>
-                    <NavLink to="/dashboard/adminHome">
-                      <FaHome></FaHome>
-                      Admin Home
-                    </NavLink>
-                  </li>
-                  <li>
                     <NavLink to="/dashboard/allusers">
                       <FaUtensils></FaUtensils>
                       All Employee List
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink to="/dashboard/manageItems">
-                      <FaList></FaList>
-                      Manage Items
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/bookings">
-                      <FaBook></FaBook>
-                      Manage Bookings
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/users">
-                      <FaUsers></FaUsers>
-                      All Users
-                    </NavLink>
-                  </li>
+                  
                 </>
               ) : (
                 <>
@@ -117,6 +95,7 @@ import Footer from "../Shared/Footer";
           </div>
         </div>
         <div className="flex-1 p-8">
+            <h1>Welcome to Admin Panel</h1>
         <Outlet></Outlet>
       </div>
         

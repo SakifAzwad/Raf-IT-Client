@@ -37,7 +37,7 @@ const NavBar = () => {
         <div className=" mr-2">
           {user ? (
             <>
-            <Link to="/dashboard"><button className="btn btn-primary mr-8">Dashboard</button></Link>
+            <Link to="/dashboard/allusers"><button className="btn btn-primary mr-8">Dashboard</button></Link>
               <div className="dropdown dropdown-end">
                 <div
                   tabIndex={0}
