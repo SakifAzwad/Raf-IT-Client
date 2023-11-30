@@ -80,7 +80,8 @@ const Home = () => {
     );
     return (
         <>
-        <div>
+       <div className='bg-col2'>
+       <div className='mt-32 bg-col2'>
             {slider}
         </div>
         <div className="bg-col2">
@@ -89,6 +90,7 @@ const Home = () => {
     <div>
         <Member members={members}></Member>
     </div>
+       </div>
     </>
     );
 };
