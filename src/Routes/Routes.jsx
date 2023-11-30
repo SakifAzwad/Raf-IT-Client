@@ -9,6 +9,7 @@ import AllUsers from "../AdminData/AllUsers";
 import AdminRoute from "./AdminRoute";
 import EmployeeList from "../HRData/EmployeeList";
 import HRRoute from "./HRRoute";
+import PaymentHistory from "../EmployeeData/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
         {
           path: "employeelist",
           element:<HRRoute><EmployeeList></EmployeeList></HRRoute>
+        },
+        {
+          path: "paymenthistory",
+          element:<PaymentHistory></PaymentHistory>
         },
       ],
   }
