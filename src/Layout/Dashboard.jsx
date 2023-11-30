@@ -59,8 +59,14 @@ import useHR from "../hooks/useHR";
                 </> : <>
                   <li>
                     <NavLink to="/dashboard/paymenthistory">
-                      <FaHome></FaHome>
+                      
                       Payment History
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/worksheet">
+                      
+                      Work-Sheet
                     </NavLink>
                   </li>
                 </>

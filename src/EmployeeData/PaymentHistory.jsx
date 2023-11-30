@@ -24,8 +24,9 @@ const PaymentHistory = () => {
     const { user} = useContext(AuthCon);
     const [users, , refetch] = useUsers();
     const {email}=user;
-    const foundUser = users.find(user => user.email === email);
+    const foundUser = users.find(user => user?.email === email);
     
+    const xx=foundUser?.salary;
 
     const uniqueSalaryDetails = new Set();
     sala.forEach((entry) => {
@@ -42,8 +43,6 @@ const PaymentHistory = () => {
       });
         }
       });
-
-      console.log(Array.from(uniqueSalaryDetails));
 
       const customStyles = {
         cells: {
@@ -65,7 +64,7 @@ const PaymentHistory = () => {
         },
         {
           name: "Salary",
-          cell: () => foundUser.salary,
+          cell: () => xx,
         },
         {
           name: "Transaction ID",
